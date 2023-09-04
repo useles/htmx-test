@@ -1,10 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Useless</title>
-  </head>
-  <body>
-    <h1>Hallo!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jolene Kearse">
+  <meta name="description" content="Generate a joke a day or more. Built with HTMX and the Joke API.">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Joke a Day</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Joke a Day</h1>
+    <button
+    class="apple"
+      hx-get="https://v2.jokeapi.dev/joke/Any?format=txt&safe-mode&type=single"
+      hx-target="#joke-container"
+    >Cure Me</button>
+
+    <p class="joke" id="joke-container">If you've had a hard day, just like 'an apple a day keeps the doctor away,' a joke a day cures what ails ya. <span class="emphasis">click the button above</span> to replace my speel with a joke.</p>
+  </div>
+
+  <script src="https://unpkg.com/htmx.org@1.9.4"></script> 
+</body>
 </html>
